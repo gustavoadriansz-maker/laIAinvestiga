@@ -2005,3 +2005,111 @@ button {
     justify-content: center;
   }
 }
+
+/* Galería de 3 columnas para Unidad 3 */
+.gallery-grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gallery-item-video {
+  aspect-ratio: 16/9;
+}
+
+@media (max-width: 768px) {
+  .gallery-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── BLOQUES TEMÁTICOS DE RECURSOS (Sección 06) ──────────── */
+
+.resource-block {
+  margin-bottom: var(--space-xl);
+}
+
+.resource-block-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+}
+
+.resource-block-title.light {
+  color: var(--blanco);
+}
+
+/* Recursos dentro de un bloque: cards más compactas */
+.resource-block .resources-list {
+  margin-bottom: 0;
+}
+
+.resource-block .resource-item {
+  align-items: center;
+}
+
+/* Bloque 4: Uso responsable */
+.responsible-use-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-sm);
+  background: var(--gris-claro);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.responsible-item {
+  font-size: 0.9rem;
+  color: var(--gris-oscuro);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Bloque 5: Acceso rápido al proyecto */
+.quick-access-block {
+  background: var(--azul-oscuro);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.quick-access-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.quick-access-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), border-color var(--transition);
+}
+
+.quick-access-item span {
+  font-size: 1.1rem;
+}
+
+.quick-access-item:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(6,182,212,0.4);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .responsible-use-grid,
+  .quick-access-grid {
+    grid-template-columns: 1fr;
+  }
+}
