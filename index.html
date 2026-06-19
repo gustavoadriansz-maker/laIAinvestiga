@@ -6,7 +6,6 @@
   <meta name="description" content="IAInvestiga — La IA como elemento central del proceso de investigación. Plataforma educativa para estudiantes de secundaria técnica." />
   <title>IAInvestiga · La IA en la Investigación</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts: Syne (display) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -16,7 +15,7 @@
   <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar" aria-label="Navegación principal">
     <div class="nav-container">
-      <a href="#home" class="nav-logo" aria-label="IAInvestiga - inicio">
+      <a href="#" class="nav-logo" data-view="home" aria-label="IAInvestiga - inicio">
         <span class="logo-icon" aria-hidden="true">◈</span>
         <span>IAInvestiga</span>
       </a>
@@ -24,560 +23,417 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navMenu" role="list">
-        <li><a href="#que-es-ia" class="nav-link">¿Qué es la IA?</a></li>
-        <li><a href="#ia-investigacion" class="nav-link">IA e Investigación</a></li>
-        <li><a href="#podcast" class="nav-link">Podcast</a></li>
-        <li><a href="#video" class="nav-link">Video</a></li>
-        <li><a href="#asistente" class="nav-link">Asistente</a></li>
-        <li><a href="#recursos" class="nav-link">Recursos</a></li>
-        <li><a href="#asistente" class="nav-cta">Consultar IA</a></li>
+        <li><a href="#" class="nav-link" data-view="que-es-ia">¿Qué es la IA?</a></li>
+        <li><a href="#" class="nav-link" data-view="ia-investigacion">IA e Investigación</a></li>
+        <li><a href="#" class="nav-link" data-view="podcast">Podcast</a></li>
+        <li><a href="#" class="nav-link" data-view="video">Video</a></li>
+        <li><a href="#" class="nav-link" data-view="asistente">Asistente</a></li>
+        <li><a href="#" class="nav-link" data-view="recursos">Recursos</a></li>
+        <li><a href="#" class="nav-cta" data-view="asistente">Consultar IA</a></li>
       </ul>
     </div>
   </nav>
 
-  <main>
+  <!-- Barra de progreso de sección -->
+  <div class="section-progress" id="sectionProgress" aria-hidden="true">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
 
-    <!-- ===================== HOME / HERO ===================== -->
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <!-- Partículas decorativas de fondo -->
-      <div class="hero-particles" aria-hidden="true">
-        <div class="particle p1"></div>
-        <div class="particle p2"></div>
-        <div class="particle p3"></div>
-        <div class="particle p4"></div>
-        <div class="particle p5"></div>
-      </div>
+  <main id="main-content">
 
-      <!-- Grid de puntos de fondo -->
-      <div class="hero-grid" aria-hidden="true"></div>
-
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="hero-badge" aria-label="Tecnología Educativa">
-            <span class="badge-dot" aria-hidden="true"></span>
-            Licenciatura en Tecnología Educativa · UTN
-          </div>
-          <h1 id="hero-title" class="hero-title">
-            <span class="title-main">IAInvestiga</span>
-            <span class="title-sub">La IA como elemento central<br/>del proceso de investigación</span>
-          </h1>
-          <p class="hero-description">
-            La inteligencia artificial está transformando profundamente la manera en que investigamos, aprendemos y producimos conocimiento. Este espacio reúne recursos educativos desarrollados mediante herramientas de IA generativa para comprender sus aplicaciones, beneficios y desafíos en los procesos de investigación educativa.
-          </p>
-          <div class="hero-actions">
-            <a href="#que-es-ia" class="btn btn-primary">
-              <span>Comenzar recorrido</span>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#asistente" class="btn btn-secondary">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              <span>Consultar asistente IA</span>
-            </a>
-          </div>
-          <!-- Indicadores de contenido -->
-          <div class="hero-stats" role="list" aria-label="Contenidos del sitio">
-            <div class="stat" role="listitem">
-              <span class="stat-number">6</span>
-              <span class="stat-label">Secciones</span>
-            </div>
-            <div class="stat-divider" aria-hidden="true"></div>
-            <div class="stat" role="listitem">
-              <span class="stat-number">4°–6°</span>
-              <span class="stat-label">Año secundario</span>
-            </div>
-            <div class="stat-divider" aria-hidden="true"></div>
-            <div class="stat" role="listitem">
-              <span class="stat-number">IA</span>
-              <span class="stat-label">Generativa</span>
-            </div>
-          </div>
+    <!-- ===================== VIEW: HOME ===================== -->
+    <section class="view active" id="view-home" aria-labelledby="hero-title">
+      <div class="hero">
+        <div class="hero-particles" aria-hidden="true">
+          <div class="particle p1"></div><div class="particle p2"></div>
+          <div class="particle p3"></div><div class="particle p4"></div><div class="particle p5"></div>
         </div>
-
-        <!-- Ilustración tecnológica animada -->
-        <div class="hero-visual" aria-hidden="true">
-          <div class="visual-core">
-            <div class="core-ring r1"></div>
-            <div class="core-ring r2"></div>
-            <div class="core-ring r3"></div>
-            <div class="core-center">
-              <span class="core-icon">◈</span>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              Licenciatura en Tecnología Educativa · UTN
             </div>
-            <!-- Nodos orbitantes -->
-            <div class="orbit o1"><div class="orbit-dot"></div></div>
-            <div class="orbit o2"><div class="orbit-dot"></div></div>
-            <div class="orbit o3"><div class="orbit-dot"></div></div>
-          </div>
-          <!-- Etiquetas flotantes -->
-          <div class="float-tag ft1">Machine Learning</div>
-          <div class="float-tag ft2">NLP</div>
-          <div class="float-tag ft3">Deep Learning</div>
-          <div class="float-tag ft4">Generativa</div>
-        </div>
-      </div>
-
-      <!-- Scroll indicator -->
-      <div class="scroll-hint" aria-hidden="true">
-        <span>Comenzar</span>
-        <div class="scroll-arrow"></div>
-      </div>
-    </section>
-
-    <!-- ===================== SECCIÓN 1: ¿QUÉ ES LA IA? ===================== -->
-    <section class="section section-light" id="que-es-ia" aria-labelledby="s1-title">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Sección 01</div>
-          <h2 id="s1-title" class="section-title">¿Qué es la Inteligencia Artificial?</h2>
-          <p class="section-desc">
-            Conceptos fundamentales sobre IA, sus características, aplicaciones y su relación con los procesos de investigación educativa.
-          </p>
-        </div>
-
-        <!-- Espacio para texto de Unidad 2 -->
-        <div class="content-placeholder editorial" id="texto-unidad2">
-          <div class="placeholder-label">📄 Texto — Unidad 2</div>
-          <p>
-            <!-- INSTRUCCIÓN: Reemplazar este párrafo con el texto generado en Unidad 2 -->
-            La inteligencia artificial (IA) es la capacidad de las máquinas para realizar tareas que normalmente requieren inteligencia humana: razonar, aprender, resolver problemas, percibir el entorno y generar lenguaje. Desde sus orígenes en la década de 1950, la IA ha evolucionado hasta convertirse en una de las tecnologías más influyentes del siglo XXI, presente en buscadores, asistentes virtuales, sistemas médicos y plataformas educativas.
-          </p>
-          <p>
-            En el campo de la investigación, la IA permite procesar grandes volúmenes de datos, identificar patrones, automatizar revisiones bibliográficas y generar síntesis de conocimiento. Esto no reemplaza al investigador humano, sino que amplía sus capacidades y optimiza sus procesos.
-          </p>
-          <p class="placeholder-note"><em>✏️ Podés reemplazar este texto con el contenido de tu Unidad 2.</em></p>
-        </div>
-
-        <!-- Cards de conceptos clave -->
-        <div class="cards-grid" role="list" aria-label="Conceptos clave de IA">
-          <article class="card" role="listitem">
-            <div class="card-icon" aria-hidden="true">🤖</div>
-            <h3 class="card-title">IA Débil vs. IA Fuerte</h3>
-            <p class="card-text">La IA débil está diseñada para tareas específicas (como reconocer imágenes). La IA fuerte, aún teórica, implicaría inteligencia general comparable a la humana.</p>
-          </article>
-          <article class="card" role="listitem">
-            <div class="card-icon" aria-hidden="true">🧠</div>
-            <h3 class="card-title">Machine Learning</h3>
-            <p class="card-text">Subcampo de la IA donde los sistemas aprenden de datos sin ser programados explícitamente. Cuantos más datos, mejor se vuelve el modelo.</p>
-          </article>
-          <article class="card" role="listitem">
-            <div class="card-icon" aria-hidden="true">💬</div>
-            <h3 class="card-title">Procesamiento del Lenguaje Natural</h3>
-            <p class="card-text">Permite a las máquinas entender, interpretar y generar lenguaje humano. Es la base de los chatbots, traductores y asistentes de escritura.</p>
-          </article>
-          <article class="card" role="listitem">
-            <div class="card-icon" aria-hidden="true">🎨</div>
-            <h3 class="card-title">IA Generativa</h3>
-            <p class="card-text">Modelos capaces de crear contenido original: textos, imágenes, audio, video y código. Ejemplos: ChatGPT, DALL·E, Stable Diffusion, Suno.</p>
-          </article>
-          <article class="card" role="listitem">
-            <div class="card-icon" aria-hidden="true">🔍</div>
-            <h3 class="card-title">IA en la Investigación</h3>
-            <p class="card-text">Automatiza revisiones bibliográficas, analiza datos cualitativos y cuantitativos, y ayuda a construir marcos teóricos con mayor velocidad y precisión.</p>
-          </article>
-          <article class="card" role="listitem">
-            <div class="card-icon" aria-hidden="true">⚖️</div>
-            <h3 class="card-title">Ética e IA</h3>
-            <p class="card-text">El uso responsable de la IA implica considerar sesgos, privacidad, transparencia y el impacto social de las decisiones automatizadas.</p>
-          </article>
-        </div>
-
-        <!-- Glosario -->
-        <div class="glossary" aria-labelledby="glosario-title">
-          <h3 id="glosario-title" class="glossary-title">Glosario básico</h3>
-          <div class="glossary-grid" role="list">
-            <div class="glossary-item" role="listitem">
-              <dt class="glossary-term">Algoritmo</dt>
-              <dd class="glossary-def">Conjunto de instrucciones que una IA sigue para procesar información y tomar decisiones.</dd>
-            </div>
-            <div class="glossary-item" role="listitem">
-              <dt class="glossary-term">Dataset</dt>
-              <dd class="glossary-def">Conjunto de datos utilizado para entrenar o evaluar un modelo de IA.</dd>
-            </div>
-            <div class="glossary-item" role="listitem">
-              <dt class="glossary-term">Modelo</dt>
-              <dd class="glossary-def">Sistema matemático entrenado que genera respuestas o predicciones a partir de datos de entrada.</dd>
-            </div>
-            <div class="glossary-item" role="listitem">
-              <dt class="glossary-term">Prompt</dt>
-              <dd class="glossary-def">Instrucción o consulta que el usuario le da a una IA generativa para obtener un resultado.</dd>
-            </div>
-            <div class="glossary-item" role="listitem">
-              <dt class="glossary-term">Sesgo</dt>
-              <dd class="glossary-def">Tendencia de un modelo a producir resultados injustos por defectos en los datos de entrenamiento.</dd>
-            </div>
-            <div class="glossary-item" role="listitem">
-              <dt class="glossary-term">Alucinación</dt>
-              <dd class="glossary-def">Cuando una IA genera información falsa de manera convincente. Requiere verificación crítica del usuario.</dd>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== SECCIÓN 2: IA E INVESTIGACIÓN ===================== -->
-    <section class="section section-dark" id="ia-investigacion" aria-labelledby="s2-title">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label light">Sección 02</div>
-          <h2 id="s2-title" class="section-title light">IA e Investigación</h2>
-          <p class="section-desc light">
-            Cómo la inteligencia artificial interviene en la generación de conocimiento, el análisis de información y la resolución de problemas en contextos investigativos.
-          </p>
-        </div>
-
-        <!-- Galería visual para imagen y animación de Unidad 3 -->
-        <div class="gallery-section" aria-label="Galería de recursos visuales — Unidad 3">
-          <h3 class="gallery-heading light">Galería de recursos — Unidad 3</h3>
-          <div class="gallery-grid">
-
-            <!-- Espacio para imagen de Unidad 3 -->
-            <div class="gallery-item gallery-image-slot" id="imagen-unidad3">
-              <div class="gallery-placeholder">
-                <div class="gallery-icon" aria-hidden="true">🖼️</div>
-                <p class="gallery-placeholder-title">Imagen generada — Unidad 3</p>
-                <p class="gallery-placeholder-note">Reemplazá esta sección con tu imagen.<br/>
-                  En el HTML, buscá <code>id="imagen-unidad3"</code> y agregá:<br/>
-                  <code>&lt;img src="img/imagen-unidad3.jpg" alt="Descripción de la imagen" /&gt;</code>
-                </p>
-              </div>
-            </div>
-
-            <!-- Espacio para animación de Unidad 3 -->
-            <div class="gallery-item gallery-anim-slot" id="animacion-unidad3">
-              <div class="gallery-placeholder">
-                <div class="gallery-icon" aria-hidden="true">🎬</div>
-                <p class="gallery-placeholder-title">Animación generada — Unidad 3</p>
-                <p class="gallery-placeholder-note">Podés insertar un GIF, video MP4 o iframe.<br/>
-                  Buscá <code>id="animacion-unidad3"</code> en el HTML.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Proceso investigativo con IA -->
-        <div class="process-flow" aria-label="Fases del proceso investigativo con IA">
-          <h3 class="process-title light">El proceso investigativo con apoyo de IA</h3>
-          <div class="process-steps">
-            <div class="process-step">
-              <div class="step-number" aria-hidden="true">1</div>
-              <div class="step-content">
-                <h4>Formulación del problema</h4>
-                <p>La IA ayuda a identificar vacíos en la literatura y refinar preguntas de investigación mediante análisis de tendencias y términos clave.</p>
-              </div>
-            </div>
-            <div class="process-step">
-              <div class="step-number" aria-hidden="true">2</div>
-              <div class="step-content">
-                <h4>Revisión bibliográfica</h4>
-                <p>Herramientas como Consensus, Elicit y Perplexity aceleran la búsqueda y síntesis de fuentes académicas relevantes.</p>
-              </div>
-            </div>
-            <div class="process-step">
-              <div class="step-number" aria-hidden="true">3</div>
-              <div class="step-content">
-                <h4>Recolección y análisis de datos</h4>
-                <p>Los modelos de IA procesan encuestas, entrevistas y datasets cuantitativos con mayor velocidad y detectan patrones no evidentes.</p>
-              </div>
-            </div>
-            <div class="process-step">
-              <div class="step-number" aria-hidden="true">4</div>
-              <div class="step-content">
-                <h4>Producción de conocimiento</h4>
-                <p>La IA generativa asiste en la redacción, estructuración y revisión de informes, siempre con supervisión y criterio del investigador.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===================== SECCIÓN 3: PODCAST ===================== -->
-    <section class="section section-light" id="podcast" aria-labelledby="s3-title">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Sección 03</div>
-          <h2 id="s3-title" class="section-title">Podcast Educativo</h2>
-          <p class="section-desc">
-            Explorá la relación entre IA e investigación a través de un recurso sonoro generado con herramientas de IA generativa.
-          </p>
-        </div>
-
-        <div class="podcast-layout">
-          <!-- Reproductor embebido de iVoox -->
-          <div class="podcast-player" aria-label="Reproductor de podcast">
-            <div class="player-container" id="ivoox-player">
-              <!-- INSTRUCCIÓN: Reemplazá el siguiente bloque con el iframe de iVoox -->
-              <!-- Buscá tu episodio en iVoox → Compartir → Código embebido → pegalo aquí -->
-              <div class="player-placeholder">
-                <div class="player-placeholder-icon" aria-hidden="true">🎙️</div>
-                <p><strong>Reproductor de iVoox — Unidad 4</strong></p>
-                <p class="player-placeholder-note">
-                  Pegá el código de embebido de tu episodio de iVoox aquí.<br/>
-                  En el HTML, buscá <code>id="ivoox-player"</code> y reemplazá este bloque con:<br/>
-                  <code>&lt;iframe allow="autoplay" allowfullscreen="" scrolling="no"<br/>
-                  src="https://www.ivoox.com/player_ej_XXXXXXXX_4_1.html"<br/>
-                  style="border:0" width="100%" height="200"&gt;&lt;/iframe&gt;</code>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Info del episodio -->
-          <div class="podcast-info">
-            <div class="podcast-meta">
-              <span class="meta-tag">📻 Episodio 01</span>
-              <span class="meta-tag">🕐 ~15 min</span>
-              <span class="meta-tag">🎓 Unidad 4</span>
-            </div>
-            <h3 class="podcast-episode-title">
-              IA e Investigación Educativa: posibilidades y límites
-              <!-- INSTRUCCIÓN: Reemplazá con el título real de tu episodio -->
-            </h3>
-            <p class="podcast-description">
-              En este episodio exploramos cómo la inteligencia artificial generativa está redefiniendo los procesos de investigación en contextos educativos, analizando sus potencialidades, sus riesgos y las competencias que deben desarrollar los investigadores del siglo XXI.
-              <!-- INSTRUCCIÓN: Reemplazá con la descripción real de tu episodio -->
+            <h1 id="hero-title" class="hero-title">
+              <span class="title-main">IAInvestiga</span>
+              <span class="title-sub">La IA como elemento central<br/>del proceso de investigación</span>
+            </h1>
+            <p class="hero-description">
+              La inteligencia artificial está transformando profundamente la manera en que investigamos, aprendemos y producimos conocimiento. Este espacio reúne recursos educativos desarrollados mediante herramientas de IA generativa para comprender sus aplicaciones, beneficios y desafíos en los procesos de investigación educativa.
             </p>
-
-            <!-- Objetivos de aprendizaje -->
-            <div class="learning-objectives" aria-labelledby="obj-podcast-title">
-              <h4 id="obj-podcast-title" class="objectives-title">Objetivos de aprendizaje</h4>
-              <ul class="objectives-list">
-                <li>Comprender el rol de la IA en los procesos de producción de conocimiento.</li>
-                <li>Identificar herramientas de IA aplicables a la investigación educativa.</li>
-                <li>Desarrollar una postura crítica frente al uso de IA generativa.</li>
-                <li>Reflexionar sobre las implicancias éticas del uso de IA en la investigación.</li>
-              </ul>
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-view="que-es-ia">
+                <span>Comenzar recorrido</span>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <button class="btn btn-secondary" data-view="asistente">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span>Consultar asistente IA</span>
+              </button>
             </div>
+            <div class="hero-stats" role="list">
+              <div class="stat" role="listitem"><span class="stat-number">6</span><span class="stat-label">Secciones</span></div>
+              <div class="stat-divider" aria-hidden="true"></div>
+              <div class="stat" role="listitem"><span class="stat-number">4°–6°</span><span class="stat-label">Año secundario</span></div>
+              <div class="stat-divider" aria-hidden="true"></div>
+              <div class="stat" role="listitem"><span class="stat-number">IA</span><span class="stat-label">Generativa</span></div>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="visual-core">
+              <div class="core-ring r1"></div><div class="core-ring r2"></div><div class="core-ring r3"></div>
+              <div class="core-center"><span class="core-icon">◈</span></div>
+              <div class="orbit o1"><div class="orbit-dot"></div></div>
+              <div class="orbit o2"><div class="orbit-dot"></div></div>
+              <div class="orbit o3"><div class="orbit-dot"></div></div>
+            </div>
+            <div class="float-tag ft1">Machine Learning</div>
+            <div class="float-tag ft2">NLP</div>
+            <div class="float-tag ft3">Deep Learning</div>
+            <div class="float-tag ft4">Generativa</div>
+          </div>
+        </div>
+
+        <!-- Mapa de navegación del sitio -->
+        <div class="home-nav-map" aria-label="Mapa de secciones del sitio">
+          <h2 class="home-nav-title">Recorrido de aprendizaje</h2>
+          <div class="nav-map-grid">
+            <button class="nav-map-card" data-view="que-es-ia">
+              <span class="nmc-icon">🤖</span>
+              <span class="nmc-num">01</span>
+              <h3 class="nmc-title">¿Qué es la IA?</h3>
+              <p class="nmc-desc">Conceptos, características y glosario básico</p>
+            </button>
+            <button class="nav-map-card" data-view="ia-investigacion">
+              <span class="nmc-icon">🔬</span>
+              <span class="nmc-num">02</span>
+              <h3 class="nmc-title">IA e Investigación</h3>
+              <p class="nmc-desc">Galería visual y proceso investigativo</p>
+            </button>
+            <button class="nav-map-card" data-view="podcast">
+              <span class="nmc-icon">🎙️</span>
+              <span class="nmc-num">03</span>
+              <h3 class="nmc-title">Podcast</h3>
+              <p class="nmc-desc">Recurso sonoro educativo</p>
+            </button>
+            <button class="nav-map-card" data-view="video">
+              <span class="nmc-icon">🎬</span>
+              <span class="nmc-num">04</span>
+              <h3 class="nmc-title">Video Educativo</h3>
+              <p class="nmc-desc">Beneficios, aplicaciones y riesgos de la IA</p>
+            </button>
+            <button class="nav-map-card" data-view="asistente">
+              <span class="nmc-icon">💬</span>
+              <span class="nmc-num">05</span>
+              <h3 class="nmc-title">Asistente IA</h3>
+              <p class="nmc-desc">GPT personalizado para consultas</p>
+            </button>
+            <button class="nav-map-card" data-view="recursos">
+              <span class="nmc-icon">📚</span>
+              <span class="nmc-num">06</span>
+              <h3 class="nmc-title">Recursos</h3>
+              <p class="nmc-desc">Bibliografía y material complementario</p>
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== SECCIÓN 4: VIDEO ===================== -->
-    <section class="section section-dark" id="video" aria-labelledby="s4-title">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label light">Sección 04</div>
-          <h2 id="s4-title" class="section-title light">Video Educativo</h2>
-          <p class="section-desc light">
-            Beneficios, aplicaciones y riesgos de la IA en procesos educativos e investigativos — Unidad 5.
-          </p>
-        </div>
+    <!-- ===================== VIEW: QUÉ ES LA IA ===================== -->
+    <section class="view" id="view-que-es-ia" aria-labelledby="s1-title">
+      <div class="view-inner section-light">
+        <div class="container">
+          <div class="view-header">
+            <div class="section-label">Sección 01</div>
+            <h2 id="s1-title" class="section-title">¿Qué es la Inteligencia Artificial?</h2>
+            <p class="section-desc">Conceptos fundamentales sobre IA, sus características, aplicaciones y su relación con los procesos de investigación educativa.</p>
+          </div>
 
-        <div class="video-featured" aria-label="Video educativo destacado">
-          <!-- Contenedor del video -->
-          <div class="video-container" id="video-unidad5">
-            <!-- INSTRUCCIÓN: Reemplazá el placeholder con tu video.
-                 Para YouTube: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TU_ID_VIDEO"
-                 title="Título del video" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-                 encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                 Para archivo local: <video controls><source src="video/tu-video.mp4" type="video/mp4"></video> -->
-            <div class="video-placeholder">
-              <div class="video-play-icon" aria-hidden="true">▶</div>
-              <p class="video-placeholder-title">Video educativo — Unidad 5</p>
-              <p class="video-placeholder-note">
-                Insertá tu video de YouTube o archivo local.<br/>
-                Buscá <code>id="video-unidad5"</code> en el HTML.
-              </p>
+          <div class="content-placeholder editorial">
+            <div class="placeholder-label">📄 Texto — Unidad 2</div>
+            <p>La inteligencia artificial (IA) es la capacidad de las máquinas para realizar tareas que normalmente requieren inteligencia humana: razonar, aprender, resolver problemas, percibir el entorno y generar lenguaje. Desde sus orígenes en la década de 1950, la IA ha evolucionado hasta convertirse en una de las tecnologías más influyentes del siglo XXI, presente en buscadores, asistentes virtuales, sistemas médicos y plataformas educativas.</p>
+            <p>En el campo de la investigación, la IA permite procesar grandes volúmenes de datos, identificar patrones, automatizar revisiones bibliográficas y generar síntesis de conocimiento. Esto no reemplaza al investigador humano, sino que amplía sus capacidades y optimiza sus procesos.</p>
+            <p class="placeholder-note"><em>✏️ Reemplazá este texto con el contenido de tu Unidad 2.</em></p>
+          </div>
+
+          <div class="cards-grid">
+            <article class="card"><div class="card-icon">🤖</div><h3 class="card-title">IA Débil vs. IA Fuerte</h3><p class="card-text">La IA débil está diseñada para tareas específicas (como reconocer imágenes). La IA fuerte, aún teórica, implicaría inteligencia general comparable a la humana.</p></article>
+            <article class="card"><div class="card-icon">🧠</div><h3 class="card-title">Machine Learning</h3><p class="card-text">Subcampo de la IA donde los sistemas aprenden de datos sin ser programados explícitamente. Cuantos más datos, mejor se vuelve el modelo.</p></article>
+            <article class="card"><div class="card-icon">💬</div><h3 class="card-title">Procesamiento del Lenguaje Natural</h3><p class="card-text">Permite a las máquinas entender, interpretar y generar lenguaje humano. Es la base de los chatbots, traductores y asistentes de escritura.</p></article>
+            <article class="card"><div class="card-icon">🎨</div><h3 class="card-title">IA Generativa</h3><p class="card-text">Modelos capaces de crear contenido original: textos, imágenes, audio, video y código. Ejemplos: ChatGPT, DALL·E, Stable Diffusion, Suno.</p></article>
+            <article class="card"><div class="card-icon">🔍</div><h3 class="card-title">IA en la Investigación</h3><p class="card-text">Automatiza revisiones bibliográficas, analiza datos cualitativos y cuantitativos, y ayuda a construir marcos teóricos con mayor velocidad y precisión.</p></article>
+            <article class="card"><div class="card-icon">⚖️</div><h3 class="card-title">Ética e IA</h3><p class="card-text">El uso responsable de la IA implica considerar sesgos, privacidad, transparencia y el impacto social de las decisiones automatizadas.</p></article>
+          </div>
+
+          <div class="glossary">
+            <h3 class="glossary-title">Glosario básico</h3>
+            <div class="glossary-grid">
+              <div class="glossary-item"><dt class="glossary-term">Algoritmo</dt><dd class="glossary-def">Conjunto de instrucciones que una IA sigue para procesar información y tomar decisiones.</dd></div>
+              <div class="glossary-item"><dt class="glossary-term">Dataset</dt><dd class="glossary-def">Conjunto de datos utilizado para entrenar o evaluar un modelo de IA.</dd></div>
+              <div class="glossary-item"><dt class="glossary-term">Modelo</dt><dd class="glossary-def">Sistema matemático entrenado que genera respuestas o predicciones a partir de datos de entrada.</dd></div>
+              <div class="glossary-item"><dt class="glossary-term">Prompt</dt><dd class="glossary-def">Instrucción o consulta que el usuario le da a una IA generativa para obtener un resultado.</dd></div>
+              <div class="glossary-item"><dt class="glossary-term">Sesgo</dt><dd class="glossary-def">Tendencia de un modelo a producir resultados injustos por defectos en los datos de entrenamiento.</dd></div>
+              <div class="glossary-item"><dt class="glossary-term">Alucinación</dt><dd class="glossary-def">Cuando una IA genera información falsa de manera convincente. Requiere verificación crítica del usuario.</dd></div>
             </div>
           </div>
 
-          <!-- Metadatos del video -->
-          <div class="video-meta-panel">
-            <div class="video-tags">
-              <span class="meta-tag">🎬 Video educativo</span>
-              <span class="meta-tag">🎓 Unidad 5</span>
-            </div>
-            <h3 class="video-title light">
-              IA en Educación: beneficios, aplicaciones y riesgos
-              <!-- INSTRUCCIÓN: Reemplazá con el título real de tu video -->
-            </h3>
-            <p class="video-description light">
-              Este video analiza el impacto de la inteligencia artificial generativa en los procesos educativos e investigativos contemporáneos. Exploramos sus aplicaciones más relevantes, sus beneficios para el aprendizaje autónomo y los riesgos que deben considerarse para un uso crítico y responsable.
-            </p>
-            <div class="video-chapters" aria-labelledby="chapters-title">
-              <h4 id="chapters-title" class="chapters-heading">Contenidos del video</h4>
-              <ul class="chapters-list">
-                <li><span class="chapter-time">00:00</span> Introducción</li>
-                <li><span class="chapter-time">02:30</span> ¿Cómo usa la IA la educación actual?</li>
-                <li><span class="chapter-time">05:45</span> Beneficios para el aprendizaje</li>
-                <li><span class="chapter-time">09:10</span> Riesgos y consideraciones éticas</li>
-                <li><span class="chapter-time">13:00</span> Conclusiones</li>
-              </ul>
-              <!-- INSTRUCCIÓN: Reemplazá con los capítulos reales de tu video -->
-            </div>
+          <div class="view-nav-bar">
+            <span></span>
+            <button class="btn btn-primary" data-view="ia-investigacion">Siguiente: IA e Investigación →</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== SECCIÓN 5: ASISTENTE IA ===================== -->
-    <section class="section section-accent" id="asistente" aria-labelledby="s5-title">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label light">Sección 05</div>
-          <h2 id="s5-title" class="section-title light">Asistente IAInvestiga</h2>
-          <p class="section-desc light">
-            Consultá al asistente virtual sobre inteligencia artificial, investigación educativa y los contenidos de esta plataforma.
-          </p>
-        </div>
-
-        <div class="assistant-layout">
-          <div class="assistant-info">
-            <div class="assistant-avatar" aria-hidden="true">
-              <span class="avatar-icon">◈</span>
-              <div class="avatar-pulse"></div>
-            </div>
-            <div class="assistant-status">
-              <span class="status-dot" aria-hidden="true"></span>
-              Asistente disponible
-            </div>
-            <h3 class="assistant-name">IAInvestiga GPT</h3>
-            <p class="assistant-desc">
-              Asistente especializado en inteligencia artificial, investigación educativa y los contenidos de esta plataforma. Basado en un GPT personalizado de ChatGPT.
-            </p>
-            <a href="#" class="btn btn-white" id="btn-asistente" aria-label="Consultar asistente IA en nueva pestaña">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              Consultar Asistente IA
-            </a>
-            <!-- INSTRUCCIÓN: Reemplazá el href="#" con la URL de tu GPT personalizado -->
+    <!-- ===================== VIEW: IA E INVESTIGACIÓN ===================== -->
+    <section class="view" id="view-ia-investigacion" aria-labelledby="s2-title">
+      <div class="view-inner section-dark">
+        <div class="container">
+          <div class="view-header">
+            <div class="section-label light">Sección 02</div>
+            <h2 id="s2-title" class="section-title light">IA e Investigación</h2>
+            <p class="section-desc light">Cómo la inteligencia artificial interviene en la generación de conocimiento, el análisis de información y la resolución de problemas.</p>
           </div>
 
-          <!-- Preguntas sugeridas -->
-          <div class="suggested-questions" aria-labelledby="suggestions-title">
-            <h3 id="suggestions-title" class="suggestions-title">Preguntas sugeridas</h3>
-            <p class="suggestions-hint">Hacé clic en una pregunta para copiarla al portapapeles</p>
-            <div class="questions-grid" role="list">
-              <button class="question-card" role="listitem" onclick="copyQuestion(this)" aria-label="Copiar pregunta: ¿Qué es la inteligencia artificial?">
-                <span class="q-icon" aria-hidden="true">💡</span>
-                <span class="q-text">¿Qué es la inteligencia artificial?</span>
-                <span class="q-copy" aria-hidden="true">Copiar</span>
-              </button>
-              <button class="question-card" role="listitem" onclick="copyQuestion(this)" aria-label="Copiar pregunta: ¿Cómo ayuda la IA a la investigación?">
-                <span class="q-icon" aria-hidden="true">🔬</span>
-                <span class="q-text">¿Cómo ayuda la IA a la investigación?</span>
-                <span class="q-copy" aria-hidden="true">Copiar</span>
-              </button>
-              <button class="question-card" role="listitem" onclick="copyQuestion(this)" aria-label="Copiar pregunta: ¿Qué riesgos tiene la IA?">
-                <span class="q-icon" aria-hidden="true">⚠️</span>
-                <span class="q-text">¿Qué riesgos tiene la IA?</span>
-                <span class="q-copy" aria-hidden="true">Copiar</span>
-              </button>
-              <button class="question-card" role="listitem" onclick="copyQuestion(this)" aria-label="Copiar pregunta: ¿Cómo se utiliza la IA en educación?">
-                <span class="q-icon" aria-hidden="true">🎓</span>
-                <span class="q-text">¿Cómo se utiliza la IA en educación?</span>
-                <span class="q-copy" aria-hidden="true">Copiar</span>
-              </button>
+          <div class="gallery-section">
+            <h3 class="gallery-heading light">Galería de recursos — Unidad 3</h3>
+            <div class="gallery-grid">
+              <div class="gallery-item" id="imagen-unidad3">
+                <div class="gallery-placeholder">
+                  <div class="gallery-icon">🖼️</div>
+                  <p class="gallery-placeholder-title">Imagen generada — Unidad 3</p>
+                  <p class="gallery-placeholder-note">Buscá <code>id="imagen-unidad3"</code> en el HTML y agregá tu imagen.</p>
+                </div>
+              </div>
+              <div class="gallery-item" id="animacion-unidad3">
+                <div class="gallery-placeholder">
+                  <div class="gallery-icon">🎬</div>
+                  <p class="gallery-placeholder-title">Animación generada — Unidad 3</p>
+                  <p class="gallery-placeholder-note">Buscá <code>id="animacion-unidad3"</code> en el HTML e insertá tu GIF o video.</p>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div class="process-flow">
+            <h3 class="process-title light">El proceso investigativo con apoyo de IA</h3>
+            <div class="process-steps">
+              <div class="process-step"><div class="step-number">1</div><div class="step-content"><h4>Formulación del problema</h4><p>La IA ayuda a identificar vacíos en la literatura y refinar preguntas de investigación mediante análisis de tendencias.</p></div></div>
+              <div class="process-step"><div class="step-number">2</div><div class="step-content"><h4>Revisión bibliográfica</h4><p>Herramientas como Consensus, Elicit y Perplexity aceleran la búsqueda y síntesis de fuentes académicas relevantes.</p></div></div>
+              <div class="process-step"><div class="step-number">3</div><div class="step-content"><h4>Recolección y análisis de datos</h4><p>Los modelos de IA procesan encuestas, entrevistas y datasets cuantitativos con mayor velocidad y detectan patrones no evidentes.</p></div></div>
+              <div class="process-step"><div class="step-number">4</div><div class="step-content"><h4>Producción de conocimiento</h4><p>La IA generativa asiste en la redacción, estructuración y revisión de informes, siempre con supervisión del investigador.</p></div></div>
+            </div>
+          </div>
+
+          <div class="view-nav-bar">
+            <button class="btn btn-ghost" data-view="que-es-ia">← Anterior</button>
+            <button class="btn btn-primary" data-view="podcast">Siguiente: Podcast →</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== SECCIÓN 6: RECURSOS ===================== -->
-    <section class="section section-light" id="recursos" aria-labelledby="s6-title">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Sección 06</div>
-          <h2 id="s6-title" class="section-title">Recursos Complementarios</h2>
-          <p class="section-desc">
-            Bibliografía, artículos académicos y material de ampliación sobre inteligencia artificial e investigación educativa.
-          </p>
+    <!-- ===================== VIEW: PODCAST ===================== -->
+    <section class="view" id="view-podcast" aria-labelledby="s3-title">
+      <div class="view-inner section-light">
+        <div class="container">
+          <div class="view-header">
+            <div class="section-label">Sección 03</div>
+            <h2 id="s3-title" class="section-title">Podcast Educativo</h2>
+            <p class="section-desc">Explorá la relación entre IA e investigación a través de un recurso sonoro generado con herramientas de IA generativa.</p>
+          </div>
+
+          <div class="podcast-layout">
+            <div class="podcast-player">
+              <div class="player-container" id="ivoox-player">
+                <!-- INSTRUCCIÓN: Reemplazá este bloque con el iframe de iVoox -->
+                <div class="player-placeholder">
+                  <div class="player-placeholder-icon">🎙️</div>
+                  <p><strong>Reproductor de iVoox — Unidad 4</strong></p>
+                  <p class="player-placeholder-note">Pegá el código de embebido de iVoox aquí.<br/>Buscá <code>id="ivoox-player"</code> en el HTML.</p>
+                </div>
+              </div>
+            </div>
+            <div class="podcast-info">
+              <div class="podcast-meta">
+                <span class="meta-tag">📻 Episodio 01</span>
+                <span class="meta-tag">🕐 ~15 min</span>
+                <span class="meta-tag">🎓 Unidad 4</span>
+              </div>
+              <h3 class="podcast-episode-title">IA e Investigación Educativa: posibilidades y límites</h3>
+              <p class="podcast-description">En este episodio exploramos cómo la inteligencia artificial generativa está redefiniendo los procesos de investigación en contextos educativos, analizando sus potencialidades, sus riesgos y las competencias que deben desarrollar los investigadores del siglo XXI.</p>
+              <div class="learning-objectives">
+                <h4 class="objectives-title">Objetivos de aprendizaje</h4>
+                <ul class="objectives-list">
+                  <li>Comprender el rol de la IA en los procesos de producción de conocimiento.</li>
+                  <li>Identificar herramientas de IA aplicables a la investigación educativa.</li>
+                  <li>Desarrollar una postura crítica frente al uso de IA generativa.</li>
+                  <li>Reflexionar sobre las implicancias éticas del uso de IA en la investigación.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="view-nav-bar">
+            <button class="btn btn-ghost" data-view="ia-investigacion">← Anterior</button>
+            <button class="btn btn-primary" data-view="video">Siguiente: Video →</button>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Filtros -->
-        <div class="resource-filters" role="tablist" aria-label="Filtrar recursos por tipo">
-          <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all" onclick="filterResources(this, 'all')">Todos</button>
-          <button class="filter-btn" role="tab" aria-selected="false" data-filter="libro" onclick="filterResources(this, 'libro')">Libros</button>
-          <button class="filter-btn" role="tab" aria-selected="false" data-filter="articulo" onclick="filterResources(this, 'articulo')">Artículos</button>
-          <button class="filter-btn" role="tab" aria-selected="false" data-filter="web" onclick="filterResources(this, 'web')">Recursos web</button>
+    <!-- ===================== VIEW: VIDEO ===================== -->
+    <section class="view" id="view-video" aria-labelledby="s4-title">
+      <div class="view-inner section-dark">
+        <div class="container">
+          <div class="view-header">
+            <div class="section-label light">Sección 04</div>
+            <h2 id="s4-title" class="section-title light">Video Educativo</h2>
+            <p class="section-desc light">Beneficios, aplicaciones y riesgos de la IA en procesos educativos e investigativos — Unidad 5.</p>
+          </div>
+
+          <div class="video-featured">
+            <div class="video-container" id="video-unidad5">
+              <!-- INSTRUCCIÓN: Reemplazá con tu iframe de YouTube o etiqueta <video> -->
+              <div class="video-placeholder">
+                <div class="video-play-icon">▶</div>
+                <p class="video-placeholder-title">Video educativo — Unidad 5</p>
+                <p class="video-placeholder-note">Buscá <code>id="video-unidad5"</code> en el HTML e insertá tu video.</p>
+              </div>
+            </div>
+            <div class="video-meta-panel">
+              <div class="video-tags">
+                <span class="meta-tag">🎬 Video educativo</span>
+                <span class="meta-tag">🎓 Unidad 5</span>
+              </div>
+              <h3 class="video-title light">IA en Educación: beneficios, aplicaciones y riesgos</h3>
+              <p class="video-description light">Este video analiza el impacto de la inteligencia artificial generativa en los procesos educativos e investigativos contemporáneos. Exploramos sus aplicaciones más relevantes, sus beneficios para el aprendizaje autónomo y los riesgos que deben considerarse para un uso crítico y responsable.</p>
+              <div class="video-chapters">
+                <h4 class="chapters-heading">Contenidos del video</h4>
+                <ul class="chapters-list">
+                  <li><span class="chapter-time">00:00</span> Introducción</li>
+                  <li><span class="chapter-time">02:30</span> ¿Cómo usa la IA la educación actual?</li>
+                  <li><span class="chapter-time">05:45</span> Beneficios para el aprendizaje</li>
+                  <li><span class="chapter-time">09:10</span> Riesgos y consideraciones éticas</li>
+                  <li><span class="chapter-time">13:00</span> Conclusiones</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="view-nav-bar">
+            <button class="btn btn-ghost" data-view="podcast">← Anterior</button>
+            <button class="btn btn-primary" data-view="asistente">Siguiente: Asistente →</button>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Lista de recursos -->
-        <div class="resources-list" id="resourcesList" role="list" aria-label="Lista de recursos">
+    <!-- ===================== VIEW: ASISTENTE ===================== -->
+    <section class="view" id="view-asistente" aria-labelledby="s5-title">
+      <div class="view-inner section-accent">
+        <div class="container">
+          <div class="view-header">
+            <div class="section-label light">Sección 05</div>
+            <h2 id="s5-title" class="section-title light">Asistente IAInvestiga</h2>
+            <p class="section-desc light">Consultá al asistente virtual sobre inteligencia artificial, investigación educativa y los contenidos de esta plataforma.</p>
+          </div>
 
-          <article class="resource-item" role="listitem" data-type="libro">
-            <div class="resource-type-badge libro">Libro</div>
-            <div class="resource-content">
-              <h3 class="resource-title">Artificial Intelligence: A Modern Approach</h3>
-              <p class="resource-author">Russell, S. & Norvig, P. (2021). Pearson.</p>
-              <p class="resource-desc">La referencia fundamental en inteligencia artificial. Cubre algoritmos, aprendizaje automático, PLN y toma de decisiones.</p>
+          <div class="assistant-layout">
+            <div class="assistant-info">
+              <div class="assistant-avatar">
+                <span class="avatar-icon">◈</span>
+                <div class="avatar-pulse"></div>
+              </div>
+              <div class="assistant-status"><span class="status-dot"></span>Asistente disponible</div>
+              <h3 class="assistant-name">IAInvestiga GPT</h3>
+              <p class="assistant-desc">Asistente especializado en inteligencia artificial, investigación educativa y los contenidos de esta plataforma. Basado en un GPT personalizado de ChatGPT.</p>
+              <a href="#" class="btn btn-white" id="btn-asistente">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Consultar Asistente IA
+              </a>
+              <!-- INSTRUCCIÓN: Reemplazá href="#" con la URL de tu GPT -->
             </div>
-            <div class="resource-actions">
-              <span class="resource-tag">IA Fundamentos</span>
+            <div class="suggested-questions">
+              <h3 class="suggestions-title">Preguntas sugeridas</h3>
+              <p class="suggestions-hint">Hacé clic para copiar al portapapeles</p>
+              <div class="questions-grid">
+                <button class="question-card" onclick="copyQuestion(this)"><span class="q-icon">💡</span><span class="q-text">¿Qué es la inteligencia artificial?</span><span class="q-copy">Copiar</span></button>
+                <button class="question-card" onclick="copyQuestion(this)"><span class="q-icon">🔬</span><span class="q-text">¿Cómo ayuda la IA a la investigación?</span><span class="q-copy">Copiar</span></button>
+                <button class="question-card" onclick="copyQuestion(this)"><span class="q-icon">⚠️</span><span class="q-text">¿Qué riesgos tiene la IA?</span><span class="q-copy">Copiar</span></button>
+                <button class="question-card" onclick="copyQuestion(this)"><span class="q-icon">🎓</span><span class="q-text">¿Cómo se utiliza la IA en educación?</span><span class="q-copy">Copiar</span></button>
+              </div>
             </div>
-          </article>
+          </div>
 
-          <article class="resource-item" role="listitem" data-type="libro">
-            <div class="resource-type-badge libro">Libro</div>
-            <div class="resource-content">
-              <h3 class="resource-title">El aprendizaje en el siglo XXI</h3>
-              <p class="resource-author">Litwin, E. (2008). Paidós.</p>
-              <p class="resource-desc">Reflexiones sobre tecnología educativa, buenas prácticas de enseñanza y el rol del docente frente a las TIC.</p>
-            </div>
-            <div class="resource-actions">
-              <span class="resource-tag">Tecnología Educativa</span>
-            </div>
-          </article>
-
-          <article class="resource-item" role="listitem" data-type="articulo">
-            <div class="resource-type-badge articulo">Artículo</div>
-            <div class="resource-content">
-              <h3 class="resource-title">Generative AI for Education: Opportunities and Challenges</h3>
-              <p class="resource-author">UNESCO (2023). Paris: UNESCO Publishing.</p>
-              <p class="resource-desc">Análisis global sobre el impacto de la IA generativa en los sistemas educativos, con recomendaciones de política pública.</p>
-            </div>
-            <div class="resource-actions">
-              <a href="https://www.unesco.org" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Ir al sitio de UNESCO">Ver fuente ↗</a>
-            </div>
-          </article>
-
-          <article class="resource-item" role="listitem" data-type="articulo">
-            <div class="resource-type-badge articulo">Artículo</div>
-            <div class="resource-content">
-              <h3 class="resource-title">IA y pensamiento crítico en la escuela secundaria técnica</h3>
-              <p class="resource-author">Sánchez, G. A. (2025). UTN — Licenciatura en Tecnología Educativa.</p>
-              <p class="resource-desc">Análisis del uso de herramientas de IA generativa en contextos de educación técnica y su impacto en las competencias de investigación.</p>
-            </div>
-            <div class="resource-actions">
-              <span class="resource-tag">Producción propia</span>
-            </div>
-          </article>
-
-          <article class="resource-item" role="listitem" data-type="web">
-            <div class="resource-type-badge web">Web</div>
-            <div class="resource-content">
-              <h3 class="resource-title">Consensus — IA para revisión bibliográfica</h3>
-              <p class="resource-author">consensus.app</p>
-              <p class="resource-desc">Motor de búsqueda académica con IA que extrae y sintetiza hallazgos de papers científicos de forma automatizada.</p>
-            </div>
-            <div class="resource-actions">
-              <a href="https://consensus.app" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Ir a Consensus">Visitar ↗</a>
-            </div>
-          </article>
-
-          <article class="resource-item" role="listitem" data-type="web">
-            <div class="resource-type-badge web">Web</div>
-            <div class="resource-content">
-              <h3 class="resource-title">Elicit — Asistente de investigación con IA</h3>
-              <p class="resource-author">elicit.com</p>
-              <p class="resource-desc">Herramienta que automatiza tareas de investigación: encontrar papers relevantes, extraer datos, hacer resúmenes y comparar estudios.</p>
-            </div>
-            <div class="resource-actions">
-              <a href="https://elicit.com" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Ir a Elicit">Visitar ↗</a>
-            </div>
-          </article>
-
-          <!-- INSTRUCCIÓN: Agregá más recursos siguiendo el mismo patrón de article.resource-item -->
-
+          <div class="view-nav-bar">
+            <button class="btn btn-ghost-light" data-view="video">← Anterior</button>
+            <button class="btn btn-white" data-view="recursos">Siguiente: Recursos →</button>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="resources-note">
-          <p>📌 <strong>Nota:</strong> Podés ampliar esta sección con tu bibliografía específica de la cursada. Seguí el mismo formato de las tarjetas anteriores.</p>
+    <!-- ===================== VIEW: RECURSOS ===================== -->
+    <section class="view" id="view-recursos" aria-labelledby="s6-title">
+      <div class="view-inner section-light">
+        <div class="container">
+          <div class="view-header">
+            <div class="section-label">Sección 06</div>
+            <h2 id="s6-title" class="section-title">Recursos Complementarios</h2>
+            <p class="section-desc">Bibliografía, artículos académicos y material de ampliación sobre inteligencia artificial e investigación educativa.</p>
+          </div>
+
+          <div class="resource-filters" role="tablist">
+            <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all" onclick="filterResources(this,'all')">Todos</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="libro" onclick="filterResources(this,'libro')">Libros</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="articulo" onclick="filterResources(this,'articulo')">Artículos</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="web" onclick="filterResources(this,'web')">Recursos web</button>
+          </div>
+
+          <div class="resources-list" id="resourcesList">
+            <article class="resource-item" data-type="libro">
+              <div class="resource-type-badge libro">Libro</div>
+              <div class="resource-content"><h3 class="resource-title">Artificial Intelligence: A Modern Approach</h3><p class="resource-author">Russell, S. & Norvig, P. (2021). Pearson.</p><p class="resource-desc">La referencia fundamental en IA. Cubre algoritmos, aprendizaje automático, PLN y toma de decisiones.</p></div>
+              <div class="resource-actions"><span class="resource-tag">IA Fundamentos</span></div>
+            </article>
+            <article class="resource-item" data-type="libro">
+              <div class="resource-type-badge libro">Libro</div>
+              <div class="resource-content"><h3 class="resource-title">El aprendizaje en el siglo XXI</h3><p class="resource-author">Litwin, E. (2008). Paidós.</p><p class="resource-desc">Reflexiones sobre tecnología educativa, buenas prácticas de enseñanza y el rol del docente frente a las TIC.</p></div>
+              <div class="resource-actions"><span class="resource-tag">Tecnología Educativa</span></div>
+            </article>
+            <article class="resource-item" data-type="articulo">
+              <div class="resource-type-badge articulo">Artículo</div>
+              <div class="resource-content"><h3 class="resource-title">Generative AI for Education: Opportunities and Challenges</h3><p class="resource-author">UNESCO (2023). Paris: UNESCO Publishing.</p><p class="resource-desc">Análisis global sobre el impacto de la IA generativa en los sistemas educativos, con recomendaciones de política pública.</p></div>
+              <div class="resource-actions"><a href="https://www.unesco.org" target="_blank" rel="noopener noreferrer" class="resource-link">Ver fuente ↗</a></div>
+            </article>
+            <article class="resource-item" data-type="articulo">
+              <div class="resource-type-badge articulo">Artículo</div>
+              <div class="resource-content"><h3 class="resource-title">IA y pensamiento crítico en la escuela secundaria técnica</h3><p class="resource-author">Sánchez, G. A. (2025). UTN — Licenciatura en Tecnología Educativa.</p><p class="resource-desc">Análisis del uso de herramientas de IA generativa en contextos de educación técnica y su impacto en las competencias de investigación.</p></div>
+              <div class="resource-actions"><span class="resource-tag">Producción propia</span></div>
+            </article>
+            <article class="resource-item" data-type="web">
+              <div class="resource-type-badge web">Web</div>
+              <div class="resource-content"><h3 class="resource-title">Consensus — IA para revisión bibliográfica</h3><p class="resource-author">consensus.app</p><p class="resource-desc">Motor de búsqueda académica con IA que extrae y sintetiza hallazgos de papers científicos de forma automatizada.</p></div>
+              <div class="resource-actions"><a href="https://consensus.app" target="_blank" rel="noopener noreferrer" class="resource-link">Visitar ↗</a></div>
+            </article>
+            <article class="resource-item" data-type="web">
+              <div class="resource-type-badge web">Web</div>
+              <div class="resource-content"><h3 class="resource-title">Elicit — Asistente de investigación con IA</h3><p class="resource-author">elicit.com</p><p class="resource-desc">Automatiza tareas de investigación: encontrar papers relevantes, extraer datos, hacer resúmenes y comparar estudios.</p></div>
+              <div class="resource-actions"><a href="https://elicit.com" target="_blank" rel="noopener noreferrer" class="resource-link">Visitar ↗</a></div>
+            </article>
+          </div>
+
+          <div class="resources-note">
+            <p>📌 <strong>Nota:</strong> Podés ampliar esta sección con tu bibliografía específica de la cursada.</p>
+          </div>
+
+          <div class="view-nav-bar">
+            <button class="btn btn-ghost" data-view="asistente">← Anterior</button>
+            <button class="btn btn-primary" data-view="home">↩ Volver al inicio</button>
+          </div>
         </div>
-
       </div>
     </section>
 
@@ -587,25 +443,20 @@
   <footer class="footer" role="contentinfo">
     <div class="footer-container">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <span class="logo-icon" aria-hidden="true">◈</span>
-          <span>IAInvestiga</span>
-        </div>
+        <div class="footer-logo"><span class="logo-icon">◈</span><span>IAInvestiga</span></div>
         <p class="footer-tagline">La IA como elemento central del proceso de investigación</p>
       </div>
-
-      <div class="footer-nav" aria-label="Mapa del sitio">
+      <div class="footer-nav">
         <h4 class="footer-nav-title">Secciones</h4>
-        <ul role="list">
-          <li><a href="#que-es-ia">¿Qué es la IA?</a></li>
-          <li><a href="#ia-investigacion">IA e Investigación</a></li>
-          <li><a href="#podcast">Podcast</a></li>
-          <li><a href="#video">Video</a></li>
-          <li><a href="#asistente">Asistente</a></li>
-          <li><a href="#recursos">Recursos</a></li>
+        <ul>
+          <li><button class="footer-nav-link" data-view="que-es-ia">¿Qué es la IA?</button></li>
+          <li><button class="footer-nav-link" data-view="ia-investigacion">IA e Investigación</button></li>
+          <li><button class="footer-nav-link" data-view="podcast">Podcast</button></li>
+          <li><button class="footer-nav-link" data-view="video">Video</button></li>
+          <li><button class="footer-nav-link" data-view="asistente">Asistente</button></li>
+          <li><button class="footer-nav-link" data-view="recursos">Recursos</button></li>
         </ul>
       </div>
-
       <div class="footer-info">
         <h4 class="footer-nav-title">Información institucional</h4>
         <p><strong>Materia:</strong> Gestión de Recursos con IA Generativa</p>
@@ -614,17 +465,13 @@
         <p><strong>Autor:</strong> Gustavo Adrián Sánchez</p>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© 2025 Gustavo Adrián Sánchez · Trabajo Integrador Final · IAInvestiga</p>
       <p class="footer-credit">Desarrollado con IA Generativa como herramienta de producción educativa</p>
     </div>
   </footer>
 
-  <!-- Notificación de copiado -->
-  <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true">
-    ✓ Pregunta copiada al portapapeles
-  </div>
+  <div class="toast" id="toast" role="alert" aria-live="polite">✓ Pregunta copiada al portapapeles</div>
 
   <script src="script.js"></script>
 </body>
